@@ -1,0 +1,11 @@
+<p>registration works!</p>
+
+<form action="" #regForm='ngForm' (ngSubmit)="register(regForm)">
+    <input type="text" name="nm" id="name"  placeholder="name" ngModel ><br>
+    <input type="number" name="age1" id="age"  placeholder="Age" ngModel ><br>
+    <input type="text" name="gen" id="gender"  placeholder="gender" ngModel ><br>
+    <input type="email" name="email" id="" placeholder="email" ngModel email #email="ngModel" ><br>
+    <span *ngIf="email.touched && !email.valid" >please enter email</span>
+    <input type="submit" value="submit" [disabled]="! regForm.valid" >
+
+</form>
